@@ -31,7 +31,7 @@ function Form() {
 
     if (name.length < 1) errors.push('Please enter your Name');
     if (!isEmail(email)) errors.push('Please enter a valid Email');
-    if (!isPhone(phone)) errors.push('Please enter a valid Phone');
+    if (!!phone && !isPhone(phone)) errors.push('Please enter a valid Phone format');
     if (!phoneType && phone) errors.push('Please select a Phone Type');
     if (bio.length > 280) errors.push('Bio cannot be longer than 280 characters');
 
